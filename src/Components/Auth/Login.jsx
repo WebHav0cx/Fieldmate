@@ -2,6 +2,8 @@ import React from "react";
 import log from "../../assets/images/log.png";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+// import header from "../../common/header";
+// import Footer from "../../common/footer";<Footer />;
 
 function Login() {
   return (
@@ -14,6 +16,7 @@ function Login() {
             alt="Side image"
           />
         </div>
+
         <div className="w-1/2 bg-default-background">
           <div className="flex flex-col gap-4">
             <div className="flex justify-around pt-2">
@@ -60,7 +63,10 @@ function Login() {
                   type="password"
                   placeholder="Password"
                 />
-                <Link to="/forgotpassword" className="text-terms-200 text-end">
+                <Link
+                  to="/forgotpassword"
+                  className="transition duration-300 ease-in-out text-terms-200 text-end"
+                >
                   Forgot Password?
                 </Link>
                 <button

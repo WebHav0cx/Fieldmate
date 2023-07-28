@@ -59,3 +59,4 @@ function ForgotPassword() {
 }
 
 export default ForgotPassword;
+// <Icon icon="fluent-emoji:check-mark" />
