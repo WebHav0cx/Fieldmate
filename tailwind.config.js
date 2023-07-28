@@ -18,6 +18,10 @@ export default {
         faded: {
           100: "#7E7E7E",
         },
+        terms: {
+          100: "#5A5A5A",
+          200: "#D93F21",
+        },
       },
       fontFamily: {
         inria: ["Inria Sans", "sans-serif"],
