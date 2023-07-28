@@ -49,23 +49,27 @@ function Signup() {
                 </div>
                 <div></div>
               </div>
-              <div className="flex flex-col gap-4 w-full">
+              <form className="flex flex-col gap-4 w-full">
                 <input
+                  required
                   className="p-3 rounded-lg"
                   type="text"
                   placeholder="Full Name"
                 />
                 <input
+                  required
                   className="p-3 rounded-lg"
                   type="email"
                   placeholder="Email"
                 />
                 <input
+                  required
                   className="p-3 rounded-lg"
                   type="password"
                   placeholder="Password"
                 />
                 <input
+                  required
                   className="p-3"
                   type="password"
                   placeholder="Confirm Password"
@@ -80,7 +84,7 @@ function Signup() {
                   By continuing you indicate that you read and agreed to the
                   Terms of Use
                 </p>
-              </div>
+              </form>
             </div>
           </div>
         </div>

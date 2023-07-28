@@ -7,9 +7,9 @@ function Header() {
   return (
     <div className="font-inria">
       <div className="bg-header-bg min-h-[1043px] overflow-hidden bg-no-repeat bg-cover bg-center">
-        <header>
+        <header className="pt-2">
           <nav className="flex justify-around w-full items-center flex-row">
-            <img className="w-32 h-28" src={Logo} alt="Fieldmate logo" />
+            <p className="text-3xl">FIELDMATE</p>
             <div className="flex gap-28">
               <ul className="flex justify-center items-center gap-8">
                 <li>About</li>
@@ -27,7 +27,7 @@ function Header() {
               </Link>
               <Link
                 to="/signup"
-                className=" w-24 h-10 justify-center items-center flex rounded-lg"
+                className="border border-solid border-white w-24 h-10 justify-center items-center flex rounded-lg"
               >
                 Signup
               </Link>

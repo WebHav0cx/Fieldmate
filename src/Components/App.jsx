@@ -4,6 +4,7 @@ import Header from "./Landing/Header";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import Home from "../pages/Homepage";
+import ForgotPassword from "./Auth/ForgotPassword";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
       </Routes>
     </Router>
   );

@@ -1,9 +1,8 @@
 import React from "react";
 import log from "../../assets/images/log.png";
-import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 
-function Login() {
+function ForgotPassword() {
   return (
     <div className="font-inria">
       <div className="h-screen flex">
@@ -29,45 +28,26 @@ function Login() {
             <div className="flex flex-col m-auto max-w-[29rem]">
               <div className="flex flex-col gap-6 justify-center items-center">
                 <div className=" flex flex-col text-center gap-5">
-                  <h2 className="text-4xl font-bold">Welcome Back</h2>
-                  <p className="text-faded-100">Login into your account</p>
+                  <h2 className="text-4xl font-bold">Forgot password</h2>
+                  <p className="text-faded-100">
+                    Enter your email address to send a link to reset your
+                    password
+                  </p>
                 </div>
-                <div className="flex flex-row gap-4">
-                  <button className="flex p-4 w-36 justify-center rounded-md gap-4 text-xs bg-white items-center">
-                    <Icon className="text-2xl" icon="flat-color-icons:google" />
-                    Google
-                  </button>
-                  <button className="flex p-4 w-36 justify-center rounded-md gap-4 text-xs bg-white items-center">
-                    <Icon className="text-2xl" icon="logos:facebook" />
-                    Facebook
-                  </button>
-                </div>
-                <div className="">
-                  <p>or continue with</p>
-                </div>
-                <div></div>
               </div>
-              <form className="flex flex-col gap-4 w-full">
+              <form className="flex flex-col gap-10 w-full mt-16">
                 <input
                   required
                   className="p-3 rounded-lg"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Email Address"
                 />
-                <input
-                  required
-                  className="p-3 rounded-lg"
-                  type="password"
-                  placeholder="Password"
-                />
-                <Link to="/forgotpassword" className="text-terms-200 text-end">
-                  Forgot Password?
-                </Link>
+
                 <button
                   className="bg-default-green p-3 rounded-lg text-white"
                   type="submit"
                 >
-                  Log In
+                  Send reset password link
                 </button>
               </form>
             </div>
@@ -78,4 +58,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotPassword;
