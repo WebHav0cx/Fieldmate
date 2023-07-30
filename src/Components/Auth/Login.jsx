@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import log from "../../assets/images/log.png";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-// import header from "../../common/header";
-// import Footer from "../../common/footer";<Footer />;
 
 function Login() {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="font-inria">
       <div className="h-screen flex">
@@ -16,14 +16,12 @@ function Login() {
             alt="Side image"
           />
         </div>
-
         <div className="w-1/2 bg-default-background">
           <div className="flex flex-col gap-4">
             <div className="flex justify-around pt-2">
               <p className="text-3xl">FIELDMATE</p>
               <div className="flex gap-4">
                 <p>Don’t have an account?</p>
-
                 <Link to="/signup" className="text-primary-100">
                   Sign up!
                 </Link>
@@ -31,7 +29,7 @@ function Login() {
             </div>
             <div className="flex flex-col m-auto max-w-[29rem]">
               <div className="flex flex-col gap-6 justify-center items-center">
-                <div className=" flex flex-col text-center gap-5">
+                <div className="flex flex-col text-center gap-5">
                   <h2 className="text-4xl font-bold">Welcome Back</h2>
                   <p className="text-faded-100">Login into your account</p>
                 </div>
@@ -45,29 +43,41 @@ function Login() {
                     Facebook
                   </button>
                 </div>
-                <div className="bar">
-                  <hr />
-                  <span>or continue with</span>
+                <div>
+                  <p>or continue with</p>
                 </div>
                 <div></div>
               </div>
               <form className="flex flex-col gap-4 w-full">
                 <input
                   required
-                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
+                  className="p-3 rounded-lg"
                   type="email"
                   placeholder="Email"
                 />
-                <input
-                  required
-                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
-                  type="password"
-                  placeholder="Password"
-                />
-                <Link
-                  to="/forgotpassword"
-                  className="transition duration-300 ease-in-out text-terms-200 text-end"
-                >
+                <div className="relative">
+                  <input
+                    required
+                    className="p-3 pr-12 rounded-lg w-full"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                  />
+                  <button
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                  >
+                    <Icon
+                      icon={
+                        showPassword
+                          ? "ant-design:eye-invisible-outlined"
+                          : "ant-design:eye-filled"
+                      }
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                </div>
+                <Link to="/Forgotpassword" className="text-terms-200 text-end">
                   Forgot Password?
                 </Link>
                 <button

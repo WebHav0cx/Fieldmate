@@ -1,9 +1,42 @@
-import React from "react";
-import log from "../../assets/images/log.png";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import log from "../../assets/images/log.png";
 
-function Signup() {
+const Signup = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [passwordsWritten, setPasswordsWritten] = useState(false);
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    setPasswordsMatch(e.target.value === confirmPassword);
+    setPasswordsWritten(!!e.target.value && !!confirmPassword);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+    setPasswordsMatch(e.target.value === password);
+    setPasswordsWritten(!!password && !!e.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission and registration here
+    // For example, you can check if passwords match and perform registration logic
+    if (password === confirmPassword) {
+      // Registration success, navigate to the "RegistrationSuccess" component
+      navigate("/registration-success");
+    } else {
+      // Passwords do not match, show error message or perform other actions
+      console.log("Passwords do not match");
+    }
+  };
   return (
     <div className="font-inria">
       <div className="h-screen flex">
@@ -20,7 +53,6 @@ function Signup() {
               <p className="text-3xl">FIELDMATE</p>
               <div className="flex gap-4">
                 <p>have an account?</p>
-
                 <Link to="/login" className="text-primary-100">
                   Sign in!
                 </Link>
@@ -63,23 +95,62 @@ function Signup() {
                   type="email"
                   placeholder="Email"
                 />
-                <input
-                  required
-                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
-                  type="password"
-                  placeholder="Password"
-                />
-
-                <input
-                  type="password"
-                  required
-                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
-                  placeholder="password"
-                />
-
+                <div className="relative">
+                  <input
+                    required
+                    className="p-3 pr-12 rounded-lg border-none outline-none focus:outline-none"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    onChange={handlePasswordChange}
+                  />
+                  <button
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                  >
+                    <Icon
+                      icon={
+                        showPassword
+                          ? "ant-design:eye-invisible-outlined"
+                          : "ant-design:eye-outlined"
+                      }
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                </div>
+                <div className="relative">
+                  <input
+                    required
+                    className="p-3 pr-12 rounded-lg border-none outline-none focus:outline-none"
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder="Confirm Password"
+                    onChange={handleConfirmPasswordChange}
+                  />
+                  <button
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"
+                    onClick={() => setShowConfirmPassword((prev) => !prev)}
+                  >
+                    <Icon
+                      icon={
+                        showConfirmPassword
+                          ? "ant-design:eye-invisible-outlined"
+                          : "ant-design:eye-outlined"
+                      }
+                      width="24"
+                      height="24"
+                    />
+                  </button>
+                </div>
+                {!passwordsMatch && passwordsWritten && (
+                  <p className="text-red-500">Passwords do not match</p>
+                )}
                 <button
-                  className="bg-default-green p-3 rounded-lg text-white"
+                  className={`bg-${
+                    passwordsMatch ? "default-green" : "gray-400"
+                  } p-3 rounded-lg text-white`}
                   type="submit"
+                  disabled={!passwordsMatch}
+                  onClick={handleSubmit}
                 >
                   Create Account
                 </button>
@@ -95,7 +166,6 @@ function Signup() {
       </div>
     </div>
   );
-}
+};
 
 export default Signup;
-// translate transform , relative

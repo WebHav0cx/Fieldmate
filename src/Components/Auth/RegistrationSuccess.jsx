@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import log from "../../assets/images/log.png";
 
 function RegistrationSuccess() {
   return (
@@ -34,11 +35,15 @@ function RegistrationSuccess() {
                   </h2>
                 </div>
               </div>
-              <div className="flex flex-col gap-10 w-full mt-16">
-                <Icon icon="fluent-emoji:check-mark" />
+              <div className="flex flex-col items-center justify-center gap-10 w-full mt-16">
+                <Icon
+                  color="green"
+                  className="w-44 h-11"
+                  icon="fluent-emoji:check-mark"
+                />
 
                 <button
-                  className="bg-default-green p-3 rounded-lg text-white"
+                  className="bg-default-green p-3 rounded-lg w-[31rem] text-white"
                   type="submit"
                 >
                   Get Started
