@@ -44,42 +44,46 @@ function Signup() {
                     Facebook
                   </button>
                 </div>
-                <div className="">
-                  <p>or continue with</p>
+                <div className="bar">
+                  <hr />
+                  <span>or continue with</span>
                 </div>
                 <div></div>
               </div>
               <form className="flex flex-col gap-4 w-full">
                 <input
                   required
-                  className="p-3 rounded-lg"
+                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
                   type="text"
                   placeholder="Full Name"
                 />
                 <input
                   required
-                  className="p-3 rounded-lg"
+                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
                   type="email"
                   placeholder="Email"
                 />
                 <input
                   required
-                  className="p-3 rounded-lg"
+                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
                   type="password"
                   placeholder="Password"
                 />
+
                 <input
-                  required
-                  className="p-3"
                   type="password"
-                  placeholder="Confirm Password"
+                  required
+                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
+                  placeholder="password"
                 />
+
                 <button
                   className="bg-default-green p-3 rounded-lg text-white"
                   type="submit"
                 >
                   Create Account
                 </button>
+
                 <p className="text-sm font-light text-terms-100">
                   By continuing you indicate that you read and agreed to the
                   Terms of Use

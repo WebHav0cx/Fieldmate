@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import Home from "../pages/Homepage";
+import About from "./Landing/About";
 
 import ForgotPassword from "./Auth/ForgotPassword";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </AnimatePresence>
     </Router>

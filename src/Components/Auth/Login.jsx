@@ -45,21 +45,22 @@ function Login() {
                     Facebook
                   </button>
                 </div>
-                <div className="">
-                  <p>or continue with</p>
+                <div className="bar">
+                  <hr />
+                  <span>or continue with</span>
                 </div>
                 <div></div>
               </div>
               <form className="flex flex-col gap-4 w-full">
                 <input
                   required
-                  className="p-3 rounded-lg"
+                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
                   type="email"
                   placeholder="Email"
                 />
                 <input
                   required
-                  className="p-3 rounded-lg"
+                  className="p-3 rounded-lg border-none outline-none focus:outline-none"
                   type="password"
                   placeholder="Password"
                 />

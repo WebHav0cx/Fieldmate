@@ -5,6 +5,8 @@ export default {
     extend: {
       backgroundImage: {
         "header-bg": "url('/src/assets/images/bg.png')",
+        "farm-bg": "url('/src/assets/images/farmland.png')",
+        "suscribe-bg": "url('/src/assets/images/suscribe.png')",
       },
       backgroundColor: {
         "default-green": "#025002",
