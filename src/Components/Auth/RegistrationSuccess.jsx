@@ -26,7 +26,7 @@ function RegistrationSuccess() {
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col m-auto max-w-[29rem]">
+            <div className="flex flex-col m-auto max-w-[29rem] pt-16">
               <div className="flex flex-col gap-6 justify-center items-center">
                 <div className=" flex flex-col text-center gap-5">
                   <h2 className="text-4xl font-bold">Congratulations</h2>
@@ -37,9 +37,9 @@ function RegistrationSuccess() {
               </div>
               <div className="flex flex-col items-center justify-center gap-10 w-full mt-16">
                 <Icon
-                  color="green"
-                  className="w-44 h-11"
-                  icon="fluent-emoji:check-mark"
+                  className="w-44 h-44"
+                  icon="fluent-emoji-high-contrast:check-mark"
+                  color="#025002"
                 />
 
                 <button
