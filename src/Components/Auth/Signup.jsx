@@ -3,13 +3,35 @@ import { Icon } from "@iconify/react";
 import { Link, useNavigate } from "react-router-dom";
 import log from "../../assets/images/log.png";
 
+const registerUser = (userData) => {
+  const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+  const userExists = existingUsers.some(
+    (user) => user.email === userData.email
+  );
+
+  if (userExists) {
+    return { error: "User already exists" };
+  } else {
+    // Add the new user to the existing users
+    const updatedUsers = [...existingUsers, userData];
+
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+    return { success: true };
+  }
+};
+
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordsMatch, setPasswordsMatch] = useState(true);
   const [passwordsWritten, setPasswordsWritten] = useState(false);
+  const [error, setError] = useState("");
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -27,16 +49,30 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission and registration here
-    // For example, you can check if passwords match and perform registration logic
+
     if (password === confirmPassword) {
-      // Registration success, navigate to the "RegistrationSuccess" component
-      navigate("/registration-success");
+      const userData = {
+        username: email,
+        fullName,
+        email,
+        password,
+      };
+
+      // Store user data in local storage
+      const registrationResult = registerUser(userData);
+
+      if (registrationResult.error) {
+        setError(registrationResult.error);
+      } else {
+        // Registration success, navigate to the "RegistrationSuccess" component
+        navigate("/registration-success");
+      }
     } else {
-      // Passwords do not match, show error message or perform other actions
-      console.log("Passwords do not match");
+      //If passwords do not match, show error message
+      setError("Passwords do not match");
     }
   };
+
   return (
     <div className="font-inria">
       <div className="h-screen flex">
@@ -88,19 +124,24 @@ const Signup = () => {
                   className="p-3 rounded-lg border-none outline-none focus:outline-none"
                   type="text"
                   placeholder="Full Name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                 />
                 <input
                   required
                   className="p-3 rounded-lg border-none outline-none focus:outline-none"
                   type="email"
                   placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <div className="relative">
                   <input
                     required
-                    className="p-3 pr-12 rounded-lg border-none outline-none focus:outline-none"
+                    className="p-3 pr-12 rounded-lg border-none w-full outline-none focus:outline-none"
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
+                    value={password}
                     onChange={handlePasswordChange}
                   />
                   <button
@@ -121,7 +162,7 @@ const Signup = () => {
                 <div className="relative">
                   <input
                     required
-                    className="p-3 pr-12 rounded-lg border-none outline-none focus:outline-none"
+                    className="p-3 w-full pr-12 rounded-lg border-none outline-none focus:outline-none"
                     type={showConfirmPassword ? "text" : "password"}
                     placeholder="Confirm Password"
                     onChange={handleConfirmPasswordChange}
@@ -144,6 +185,8 @@ const Signup = () => {
                 {!passwordsMatch && passwordsWritten && (
                   <p className="text-red-500">Passwords do not match</p>
                 )}
+
+                {error && <p className="text-red-500">{error}</p>}
                 <button
                   className={`bg-${
                     passwordsMatch ? "default-green" : "gray-400"
