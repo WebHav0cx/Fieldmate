@@ -7,6 +7,7 @@ import Home from "../pages/Homepage";
 import About from "./Landing/About";
 import RegistrationSuccess from "./Auth/RegistrationSuccess";
 import ForgotPassword from "./Auth/ForgotPassword";
+import EquipmentCatalogue from "../pages/EquipmentCatalogue";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             path="/registration-success"
             element={<RegistrationSuccess />}
           />
+          <Route path="/equipment-catalogue" element={<EquipmentCatalogue />} />
         </Routes>
       </AnimatePresence>
     </Router>

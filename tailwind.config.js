@@ -14,7 +14,9 @@ export default {
         "default-background": "#F5F5F5",
         "default-background-100": "#ECECEC;",
       },
+      borderColor: {},
       colors: {
+        "custom-orange": "#C86C00",
         primary: {
           100: "#025002",
         },
@@ -24,6 +26,9 @@ export default {
         terms: {
           100: "#5A5A5A",
           200: "#D93F21",
+        },
+        search: {
+          100: "#5F675D",
         },
       },
       fontFamily: {

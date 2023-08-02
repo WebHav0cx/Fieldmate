@@ -1,13 +1,17 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <div>
+    <div className="font-inria">
       <footer className="flex flex-col bg-default-green h-[22rem] justify-center my items-center gap-7">
         <div className="flex flex-col justify-center items-center gap-8">
-          <h1 className="text-white text-4xl font-normal">FIELDMATE</h1>
+          <Link to="/" className="text-white text-4xl font-normal">
+            FIELDMATE
+          </Link>
+
           <ul className="flex text-white text-xl gap-10">
             <li>Home</li>
             <li>About</li>

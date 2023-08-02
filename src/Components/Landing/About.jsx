@@ -9,7 +9,7 @@ function About() {
   return (
     <div className="font-inria">
       <section className="bg-default-background-100">
-        <div className="bg-farm-bg h-[28.3125rem]">
+        <div className="bg-farm-bg bg-no-repeat bg-center bg-cover w-full h-[28.3125rem]">
           <Nav />
           <h2 className="text-center mt-44 text-7xl font-bold">
             Welcome to FIELDMATE

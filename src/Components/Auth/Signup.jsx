@@ -86,7 +86,9 @@ const Signup = () => {
         <div className="w-1/2 bg-default-background">
           <div className="flex flex-col gap-4">
             <div className="flex justify-around pt-2">
-              <p className="text-3xl">FIELDMATE</p>
+              <Link to="/" className="text-3xl">
+                FIELDMATE
+              </Link>
               <div className="flex gap-4">
                 <p>have an account?</p>
                 <Link to="/login" className="text-primary-100">

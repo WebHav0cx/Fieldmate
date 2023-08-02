@@ -1,7 +1,8 @@
 import React from "react";
 import Nav from "../../common/Nav";
+import { Icon } from "@iconify/react";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -17,14 +18,17 @@ function Header() {
               Boost Your Farming Efficiency
             </p>
           </div>
-          <div className="flex justify-between gap-8 rounded-lg w-[40rem] bg-white p-3">
+          <div className="flex justify-between gap-8 rounded-lg w-[44rem] bg-white p-3">
             <input
-              className="border-none px-5 outline-none focus:outline-none "
+              className="border-none px-5 w-[30rem] outline-none focus:outline-none "
               placeholder="Search for Something..."
               type="text"
             />
-            <div className="border border-r-1 border-black ml-60"></div>
-            <button className=" py-1 px-4 rounded-md ">Search</button>
+            <div className="border border-r-1 border-black ml-0"></div>
+            <button className="flex gap-4 justify-center items-center py-1 rounded-md ">
+              <Icon className="w-8 h-8" icon="majesticons:search-line" />
+              <p className="text-3xl font-bold text-search-100 pr-10">Search</p>
+            </button>
           </div>
         </div>
       </div>

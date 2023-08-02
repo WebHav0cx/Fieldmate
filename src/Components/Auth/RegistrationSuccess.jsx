@@ -16,15 +16,10 @@ function RegistrationSuccess() {
         </div>
         <div className="w-1/2 bg-default-background">
           <div className="flex flex-col gap-4">
-            <div className="flex justify-around pt-2">
-              <p className="text-3xl">FIELDMATE</p>
-              <div className="flex gap-4">
-                <p>Don’t have an account?</p>
-
-                <Link to="/signup" className="text-primary-100">
-                  Sign up!
-                </Link>
-              </div>
+            <div className="flex items-start justify-start pl-4 pt-2">
+              <Link to="/" className="text-3xl">
+                FIELDMATE
+              </Link>
             </div>
             <div className="flex flex-col m-auto max-w-[29rem] pt-16">
               <div className="flex flex-col gap-6 justify-center items-center">

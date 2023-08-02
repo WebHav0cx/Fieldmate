@@ -3,17 +3,21 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div>
+    <div className="font-inria">
       <header className="pt-2">
         <nav className="flex justify-around w-full items-center flex-row">
-          <p className="text-3xl">FIELDMATE</p>
+          <Link to="/" className="text-3xl">
+            FIELDMATE
+          </Link>
           <div className="flex gap-28">
             <ul className="flex justify-center items-center gap-8">
               <li>Home</li>
               <li>
                 <Link to="/about">About</Link>
               </li>
-              <li>Equipment Catalog</li>
+              <li>
+                <Link to="/equipment-catalogue">Equipment Catalogue</Link>
+              </li>
 
               <li>Review</li>
             </ul>

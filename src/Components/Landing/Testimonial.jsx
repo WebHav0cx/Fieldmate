@@ -6,9 +6,15 @@ function Testimonial() {
     <div className="font-inria">
       <section className="flex flex-col justify-center items-center bg-default-background gap-6">
         <h2 className="text-primary-100 text-5xl font-bold">Testimonials</h2>
-        <div className="flex bg-orange-500">
-          <button>hey</button>
-          <div className="w-[77.875rem] h-[26.875rem] bg-orange-600 flex flex-col justify-center items-center gap-[1.62rem]">
+        <div className="flex justify-center items-center w-full bg-gradient-to-r from-custom-orange to-transparent">
+          <button className=" w-9 h-8">
+            <Icon
+              className="w-14 h-14"
+              icon="ic:sharp-arrow-back-ios"
+              color="white"
+            />
+          </button>
+          <div className="w-[77.875rem] h-[26.875rem] flex flex-col justify-center items-center gap-[1.62rem]">
             <p className="text-4xl font-bold text-center">
               FIELDMATE made farming equipment so easy and affordable. Their
               website is user-friendly and their customer service is top-notch.
@@ -19,6 +25,14 @@ function Testimonial() {
               <p className="text-4xl font-bold">Ikere ekiti</p>
             </div>
           </div>
+          <button>
+            <Icon
+              className="w-14 h-14"
+              icon="ic:sharp-arrow-back-ios"
+              color="white"
+              rotate={2}
+            />
+          </button>
         </div>
       </section>
     </div>
