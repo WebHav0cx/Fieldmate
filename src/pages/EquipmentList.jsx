@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Header from "../Components/Catalogue/Header";
-import Footer from "../common/footer";
+import Footer from "../common/Footer";
 
 function EquipmentDetails() {
   const { equipmentName } = useParams(); // Get the equipment name from URL params
