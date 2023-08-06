@@ -11,15 +11,18 @@ function Nav() {
           </Link>
           <div className="flex gap-28">
             <ul className="flex justify-center items-center gap-8">
-              <Link to="/">Home</Link>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
               <li>
                 <Link to="/about">About</Link>
               </li>
               <li>
                 <Link to="/equipment-catalogue">Equipment Catalogue</Link>
               </li>
-
-              <Link to="/rewiew">Review</Link>
+              <li>
+                <Link to="/rewiew">Review</Link>
+              </li>
             </ul>
           </div>
           <div className="flex justify-center items-center gap-2">
