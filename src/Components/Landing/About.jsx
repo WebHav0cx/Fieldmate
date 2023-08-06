@@ -4,7 +4,7 @@ import Welcome from "../../assets/images/tractor1.png";
 import Mission from "../../assets/images/tractor2.png";
 import Passion from "../../assets/images/tractor3.png";
 
-import Footer from "../../common/footer";
+import Footer from "../../common/Footer";
 function About() {
   return (
     <div className="font-inria">
