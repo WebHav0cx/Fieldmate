@@ -50,6 +50,11 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!fullName || !email || !password || !confirmPassword) {
+      setError("All fields are required");
+      return;
+    }
+
     if (password === confirmPassword) {
       const userData = {
         username: email,

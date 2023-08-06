@@ -4,7 +4,7 @@ function Welcome() {
   return (
     <div className="font-inria">
       <section className="bg-default-background py-8">
-        <p className="text-center text-3xl font-normal px-[6.25rem] ">
+        <p className="text-center text-2xl font-normal px-[6.25rem] ">
           Welcome to FIDELITY Below is a comprehensive catalogue of the farm
           equipment available for rent. Please browse through the listings to
           find the equipment that suits your farming needs. Each listing

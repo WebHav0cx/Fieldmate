@@ -2,9 +2,37 @@ import React, { useState } from "react";
 import log from "../../assets/images/log.png";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+const loginUser = (email, password) => {
+  const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+  const user = existingUsers.find(
+    (user) => user.email === email && user.password === password
+  );
+
+  return user;
+};
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const user = loginUser(email, password);
+
+    if (user) {
+      navigate("/about");
+    } else {
+      setError("Invalid Credentials");
+    }
+  };
 
   return (
     <div className="font-inria">

@@ -8,6 +8,8 @@ import About from "./Landing/About";
 import RegistrationSuccess from "./Auth/RegistrationSuccess";
 import ForgotPassword from "./Auth/ForgotPassword";
 import EquipmentCatalogue from "../pages/EquipmentCatalogue";
+import Equiplist from "./Catalogue/Equiplist";
+import Review from "../pages/Review";
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
             element={<RegistrationSuccess />}
           />
           <Route path="/equipment-catalogue" element={<EquipmentCatalogue />} />
+          <Route path="/rewiew" element={<Review />} />
         </Routes>
       </AnimatePresence>
     </Router>
