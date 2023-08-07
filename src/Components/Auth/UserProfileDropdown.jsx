@@ -4,7 +4,7 @@ import { useUser } from "../../context/UserContext";
 
 function UserProfileDropdown() {
   const user = {
-    username: "ajdj",
+    username: "Ayodeji Ojo",
   };
   const { logout } = useUser();
   return (
@@ -13,7 +13,7 @@ function UserProfileDropdown() {
         <ul className="py-2">
           <li>
             <Link
-              to={`/profile/${user.username}`}
+              to="/profile"
               className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
             >
               Profile

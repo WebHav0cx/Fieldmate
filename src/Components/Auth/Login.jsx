@@ -20,7 +20,7 @@ function Login() {
     const user = existingUsers.find(
       (user) => user.email === email && user.password === password
     );
-
+    console.log("Found user", user);
     return user;
   };
 
@@ -98,6 +98,7 @@ function Login() {
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
                   />
+                  <div className="text-red-500">{error}</div>
                   <button
                     className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"
                     onClick={() => setShowPassword((prev) => !prev)}
@@ -119,6 +120,7 @@ function Login() {
                 <button
                   className="bg-default-green p-3 rounded-lg text-white"
                   type="submit"
+                  onClick={handleSubmit}
                 >
                   Log In
                 </button>

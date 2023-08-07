@@ -11,6 +11,7 @@ import EquipmentCatalogue from "../pages/EquipmentCatalogue";
 import Equiplist from "./Catalogue/Equiplist";
 import Review from "../pages/Review";
 import { UserProvider } from "../context/UserContext";
+import ProfileInfo from "./Auth/ProfileInfo";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               element={<EquipmentCatalogue />}
             />
             <Route path="/rewiew" element={<Review />} />
+            <Route path="/profile/" element={<ProfileInfo />} />
           </Routes>
         </AnimatePresence>
       </Router>
