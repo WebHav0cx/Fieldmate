@@ -28,11 +28,13 @@ function Login() {
     e.preventDefault();
 
     const user = loginUser(email, password);
-
+    console.log("success");
     if (user) {
+      console.log("Login successful");
       login(user.fullname);
       navigate("/equipment-catalogue");
     } else {
+      console.log("Invalid credentials");
       setError("Invalid Credentials");
     }
   };
