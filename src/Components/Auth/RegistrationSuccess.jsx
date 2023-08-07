@@ -1,9 +1,16 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import log from "../../assets/images/log.png";
 
 function RegistrationSuccess() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="font-inria">
       <div className="h-screen flex">
@@ -39,7 +46,8 @@ function RegistrationSuccess() {
 
                 <button
                   className="bg-default-green p-3 rounded-lg w-[31rem] text-white"
-                  type="submit"
+                  type="button"
+                  onClick={handleGetStarted}
                 >
                   Get Started
                 </button>

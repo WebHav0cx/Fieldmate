@@ -3,16 +3,7 @@ import log from "../../assets/images/log.png";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
-const loginUser = (email, password) => {
-  const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-  const user = existingUsers.find(
-    (user) => user.email === email && user.password === password
-  );
-
-  return user;
-};
+import { useUser } from "../../context/UserContext";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,6 +12,17 @@ function Login() {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+  const { login } = useUser();
+
+  const loginUser = (email, password) => {
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    const user = existingUsers.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    return user;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +30,8 @@ function Login() {
     const user = loginUser(email, password);
 
     if (user) {
-      navigate("/about");
+      login(user.fullname);
+      navigate("/equipment-catalogue");
     } else {
       setError("Invalid Credentials");
     }
@@ -78,7 +81,10 @@ function Login() {
                 </div>
                 <div></div>
               </div>
-              <form className="flex flex-col gap-4 w-full">
+              <form
+                className="flex flex-col gap-4 w-full"
+                onSubmit={handleSubmit}
+              >
                 <input
                   required
                   className="p-3 rounded-lg"

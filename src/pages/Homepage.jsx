@@ -4,7 +4,7 @@ import Footer from "../common/Footer";
 import Categories from "../Components/Landing/Categories";
 import Services from "../Components/Landing/Services";
 import Testimonial from "../Components/Landing/Testimonial";
-import Suscribe from "../Components/Landing/Suscribe";
+import Subscribe from "../Components/Landing/Subscribe";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Categories />
       <Services />
       <Testimonial />
-      <Suscribe />
+      <Subscribe />
       <Footer />
     </div>
   );
