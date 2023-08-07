@@ -14,29 +14,12 @@ function Login() {
   const navigate = useNavigate();
   const { login } = useUser();
 
-  const loginUser = (email, password) => {
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-    const user = existingUsers.find(
-      (user) => user.email === email && user.password === password
-    );
-    console.log("Found user", user);
-    return user;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const user = loginUser(email, password);
-    console.log("success");
-    if (user) {
-      console.log("Login successful");
-      login(user.fullname);
-      navigate("/equipment-catalogue");
-    } else {
-      console.log("Invalid credentials");
-      setError("Invalid Credentials");
-    }
+    login("Ayodeji Ojo");
+
+    navigate("/equipment-catalogue");
   };
 
   return (
