@@ -31,7 +31,7 @@ function Nav() {
                 <Link to="/equipment-catalogue">Equipment Catalogue</Link>
               </li>
               <li>
-                <Link to="/rewiew">Review</Link>
+                <Link to="/review">Review</Link>
               </li>
             </ul>
           </div>
@@ -47,7 +47,7 @@ function Nav() {
                 <img
                   src={avatar}
                   alt="User Avatar"
-                  className="w-8 h-8 rounded-full"
+                  className="w-12 h-12 rounded-full"
                 />
                 {isDropdownOpen && <UserProfileDropdown />}
               </div>

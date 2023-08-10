@@ -1,24 +1,18 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import Header from "../Components/Catalogue/Header";
+import Header from "../Components/EquipList/Header";
+import ListForm from "../Components/EquipList/ListForm";
+import ListText from "../Components/EquipList/ListText";
 import Footer from "../common/Footer";
 
-function EquipmentDetails() {
-  const { equipmentName } = useParams(); // Get the equipment name from URL params
-
-  // You can fetch more details about the equipment using the equipmentName
-
+function EquipmentList() {
   return (
     <div>
       <Header />
-      <div className="container mx-auto px-4 mt-10">
-        {/* Display equipment details */}
-        <h2 className="text-2xl font-bold mb-4">{equipmentName}</h2>
-        {/* Display other equipment details like image, owner's name, full description, etc. */}
-      </div>
+      <ListText />
+      <ListForm />
       <Footer />
     </div>
   );
 }
 
-export default EquipmentDetails;
+export default EquipmentList;

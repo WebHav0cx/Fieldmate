@@ -13,6 +13,7 @@ export default {
         "default-black-text": "#010101",
         "default-background": "#F5F5F5",
         "default-background-100": "#ECECEC;",
+        "table-background": "#D9D9D9",
       },
       borderColor: {},
       colors: {

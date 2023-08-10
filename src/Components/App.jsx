@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
@@ -12,6 +12,7 @@ import Equiplist from "./Catalogue/Equiplist";
 import Review from "../pages/Review";
 import { UserProvider } from "../context/UserContext";
 import ProfileInfo from "./Auth/ProfileInfo";
+import EquipmentList from "../pages/EquipmentList";
 
 function App() {
   return (
@@ -32,8 +33,10 @@ function App() {
               path="/equipment-catalogue"
               element={<EquipmentCatalogue />}
             />
-            <Route path="/rewiew" element={<Review />} />
+            <Route path="/review" element={<Review />} />
             <Route path="/profile/" element={<ProfileInfo />} />
+
+            <Route path="/equipment-list" element={<EquipmentList />} />
           </Routes>
         </AnimatePresence>
       </Router>

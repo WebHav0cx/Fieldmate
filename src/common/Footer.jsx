@@ -16,7 +16,7 @@ function Footer() {
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/equipment-catalogue">Equipment Catalog</Link>
-            <Link to="/rewiew">Review</Link>
+            <Link to="/review">Review</Link>
           </ul>
           <div className="flex gap-5">
             <Icon className="w-8 h-8" icon="fe:instagram" color="white" />
